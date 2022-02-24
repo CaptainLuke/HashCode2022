@@ -52,14 +52,18 @@ public class Main {
 			int s = Integer.valueOf(nums[4]);
 			
 			String[] roles = new String[s];
+			int[] levels = new int[s];
 			for (int j=0; j<s; j++) {
 				st = br.readLine();
 				nums = st.split(" ");
-				skills[0] = nums[0];
+				roles[0] = nums[0];
 				levels[0] = Integer.valueOf(nums[1]);
 			}
-			contributers.add(new Contributer(name, skills, levels));
+			projects.add(new Project(name, dur, score, bestBefore, roles));
 		}
+		
+		System.out.println(contributers);
+		System.out.println(projects);
 		
 		br.close();
 	}
