@@ -2,11 +2,12 @@ import java.util.HashMap;
 
 public class Contributer {
     private String name;
-    private HashMap<String, Integer> skillMap = new HashMap<String, Integer>();
+    private HashMap<String, Integer> skillMap;
     private String curProject;
 
     public Contributer(String name, String[] skills, int[] levels){
         this.name = name;
+        skillMap = new HashMap<String, Integer>();
 
         for(int i = 0; i < skills.length; i++){
             skillMap.put(skills[i], levels[i]);

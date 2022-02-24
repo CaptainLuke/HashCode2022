@@ -1,17 +1,22 @@
+import java.util.HashMap;
 
 public class Project {
 	private String name; //Name of project
 	private int dur; //Duration of project
 	private int score; //Score project is worth
 	private int bestBefore; //Number of days before project decays
-	private String[] roles; //Roles that project needs
+	private HashMap<String, Integer> roleMap;
 
-	public Project(String name, int dur, int score, int bestBefore, String[] roles){
+	public Project(String name, int dur, int score, int bestBefore, String[] roles, int[] levels){
 		this.name = name;
 		this.dur = dur;
 		this.score = score;
 		this.bestBefore = bestBefore;
-		this.roles = roles;
+		roleMap = new HashMap<String, Integer>();
+
+		for(int i = 0; i < roles.length; i++){
+            roleMap.put(roles[i], levels[i]);
+        }
 	}
 
 	public String getName(){
@@ -30,7 +35,8 @@ public class Project {
 		return this.bestBefore;
 	}
 
-	public String[] getRoles(){
-		return this.roles;
+	public int getLevel(String role){
+		return roleMap.get(role);
 	}
+
 }
