@@ -59,11 +59,13 @@ public class Main {
 				roles[0] = nums[0];
 				levels[0] = Integer.valueOf(nums[1]);
 			}
-			projects.add(new Project(name, dur, score, bestBefore, roles));
+			projects.add(new Project(name, dur, score, bestBefore, roles, levels));
 		}
 		
 		System.out.println(contributers);
 		System.out.println(projects);
+		
+		
 		
 		br.close();
 	}
