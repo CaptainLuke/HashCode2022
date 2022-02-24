@@ -3,6 +3,7 @@ import java.util.HashMap;
 public class Contributer {
     private String name;
     private HashMap<String, Integer> skillMap = new HashMap<String, Integer>();
+    private String curProject;
 
     public Contributer(String name, String[] skills, int[] levels){
         this.name = name;
@@ -10,6 +11,8 @@ public class Contributer {
         for(int i = 0; i < skills.length; i++){
             skillMap.put(skills[i], levels[i]);
         }
+
+        curProject = null;
     }
 
     public String getName(){
@@ -22,6 +25,14 @@ public class Contributer {
 
     public void changeLevel(String skill, int newLevel){
         skillMap.put(skill, newLevel);
+    }
+
+    public String getProject(){
+        return this.curProject;
+    }
+
+    public void setProject(String project){
+        this.curProject = project;
     }
 
 }
