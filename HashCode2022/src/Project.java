@@ -6,12 +6,17 @@ public class Project {
 	private int score; //Score project is worth
 	private int bestBefore; //Number of days before project decays
 	private HashMap<String, Integer> roleMap;
+	private String[] roles;
+	private int[] levels;
 
 	public Project(String name, int dur, int score, int bestBefore, String[] roles, int[] levels){
 		this.name = name;
 		this.dur = dur;
 		this.score = score;
 		this.bestBefore = bestBefore;
+		
+		this.roles = roles;
+		this.levels = levels;
 		roleMap = new HashMap<String, Integer>();
 
 		for(int i = 0; i < roles.length; i++){
@@ -37,6 +42,14 @@ public class Project {
 
 	public int getLevel(String role){
 		return roleMap.get(role);
+	}
+
+	public String[] getRoles() {
+		return roles;
+	}
+
+	public int[] getLevels() {
+		return levels;
 	}
 
 }
